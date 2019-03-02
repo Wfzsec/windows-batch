@@ -1,0 +1,23 @@
+set shell_path = "shell_path"
+echo "echo 指令执行成功"
+echo ipconfig > ipconfig.txt
+echo dir >> dir.txt
+if not exist G:\1.txt echo "if not exist 执行成功"
+if not exist G:\1.txt set mydir=C:\1.txt
+if exist G:\test echo "if exist 执行成功"
+while ("%1" == "a") echo "while"
+shift /2
+for /d %%i in (G:\\) DO echo %%i
+for /r %%i in (*.py) do echo %%i
+for /r G:\test %%i in (*.dll) do echo %%i
+for /r G:\test %%i in (*.rb) do echo %%i
+for /f %%i in (test.txt) do echo %%i
+for /f -skip = 2 %%i in (test.txt) do echo %%i
+for /f -skip = 3 %%i in (test.txt) do echo %%i
+for /l %%i in (1,1,5) echo %%i
+for /l %%i in (1,1,5) echo %%i
+for /l %%i in (1,1,7) echo %%i
+for /l %%i in (2,4,5) echo %%i
+:end
+echo "goto_end"
+if "%1" == "a" goto end
